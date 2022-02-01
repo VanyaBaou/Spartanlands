@@ -1,0 +1,16 @@
+[
+  {
+    "modid": "spartanlands",
+    "name": "Spartanlands",
+    "description": "Adds Spartan Weaponry weapons for materials in The Betweenlands",
+    "version": "1.4.0",
+    "mcversion": "1.12.2",
+    "url": "https://github.com/VanyaBaou/Spartanlands",
+    "updateUrl": "",
+    "authorList": ["Bizzoula"],
+    "credits": "Original by cbkovak, remake by EnergizedBlast",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": ["spartanweaponry","betweenlands"]
+  }
+]
