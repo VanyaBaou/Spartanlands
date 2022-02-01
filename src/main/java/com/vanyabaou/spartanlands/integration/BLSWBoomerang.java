@@ -1,7 +1,6 @@
 package com.vanyabaou.spartanlands.integration;
 
 import com.google.common.collect.Multimap;
-import com.oblivioussp.spartanweaponry.api.DamageHelper;
 import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
 import com.oblivioussp.spartanweaponry.item.ItemBoomerang;
 import com.oblivioussp.spartanweaponry.util.ConfigHandler;
@@ -59,7 +58,7 @@ public class BLSWBoomerang extends ItemBoomerang implements ICorrodible, IAnimat
 
     @Override
     public Multimap<String, AttributeModifier> getAttributeModifiers(EntityEquipmentSlot slot, ItemStack stack) {
-        return CorrosionHelper.getAttributeModifiers(super.getAttributeModifiers(slot, stack), slot, stack, ItemTool.ATTACK_DAMAGE_MODIFIER, Math.max(0.5F, this.toolMaterial.getAttackDamage() * ConfigHandler.damageMultiplierBoomerang + ConfigHandler.damageBaseBoomerang));
+        return CorrosionHelper.getAttributeModifiers(super.getAttributeModifiers(slot, stack), slot, stack, ItemTool.ATTACK_DAMAGE_MODIFIER, Math.max(0.5F, this.toolMaterial.getAttackDamage() * ConfigHandler.damageMultiplierBoomerang + ConfigHandler.damageBaseBoomerang - 1f));
     }
 
     @SideOnly(Side.CLIENT)

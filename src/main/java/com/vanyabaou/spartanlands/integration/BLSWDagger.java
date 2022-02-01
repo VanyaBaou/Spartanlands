@@ -1,7 +1,6 @@
 package com.vanyabaou.spartanlands.integration;
 
 import com.google.common.collect.Multimap;
-import com.oblivioussp.spartanweaponry.api.DamageHelper;
 import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
 import com.oblivioussp.spartanweaponry.item.ItemDagger;
 import com.oblivioussp.spartanweaponry.util.ConfigHandler;
@@ -25,9 +24,7 @@ import thebetweenlands.common.item.BLMaterialRegistry;
 import javax.annotation.Nullable;
 import java.util.List;
 
-/**
- * Created by Jacob on 8/12/2018.
- */
+
 public class BLSWDagger extends ItemDagger implements ICorrodible, IAnimatorRepairable {
 
     protected final ToolMaterialEx toolMaterial;
@@ -62,7 +59,7 @@ public class BLSWDagger extends ItemDagger implements ICorrodible, IAnimatorRepa
 
     @Override
     public Multimap<String, AttributeModifier> getAttributeModifiers(EntityEquipmentSlot slot, ItemStack stack) {
-        return CorrosionHelper.getAttributeModifiers(super.getAttributeModifiers(slot, stack), slot, stack, ItemTool.ATTACK_DAMAGE_MODIFIER, Math.max(0.5F, this.toolMaterial.getAttackDamage() * ConfigHandler.damageMultiplierDagger + ConfigHandler.damageBaseDagger));
+        return CorrosionHelper.getAttributeModifiers(super.getAttributeModifiers(slot, stack), slot, stack, ItemTool.ATTACK_DAMAGE_MODIFIER, Math.max(0.5F, this.toolMaterial.getAttackDamage() * ConfigHandler.damageMultiplierDagger + ConfigHandler.damageBaseDagger - 1f));
     }
 
     @SideOnly(Side.CLIENT)

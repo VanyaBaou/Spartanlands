@@ -1,8 +1,5 @@
 package com.vanyabaou.spartanlands.integration;
 
-/**
- * Created by Jacob on 8/12/2018.
- */
 
 import com.vanyabaou.spartanlands.Spartanlands;
 import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;

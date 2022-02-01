@@ -7,9 +7,6 @@ import net.minecraftforge.oredict.OreDictionary;
 
 import java.util.function.BooleanSupplier;
 
-/**
- * Created by Jacob on 7/21/2018.
- */
 public class ConditionFactoryOreDict implements IConditionFactory {
     public ConditionFactoryOreDict() {
     }

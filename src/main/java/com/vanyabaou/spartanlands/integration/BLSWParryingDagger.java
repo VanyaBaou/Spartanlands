@@ -24,9 +24,6 @@ import thebetweenlands.common.item.BLMaterialRegistry;
 import javax.annotation.Nullable;
 import java.util.List;
 
-/**
- * Created by Jacob on 8/12/2018.
- */
 public class BLSWParryingDagger extends ItemParryingDagger implements ICorrodible, IAnimatorRepairable {
 
     protected final ToolMaterialEx toolMaterial;
@@ -61,7 +58,7 @@ public class BLSWParryingDagger extends ItemParryingDagger implements ICorrodibl
 
     @Override
     public Multimap<String, AttributeModifier> getAttributeModifiers(EntityEquipmentSlot slot, ItemStack stack) {
-        return CorrosionHelper.getAttributeModifiers(super.getAttributeModifiers(slot, stack), slot, stack, ItemTool.ATTACK_DAMAGE_MODIFIER, Math.max(0.5F, this.toolMaterial.getAttackDamage() * ConfigHandler.damageMultiplierParryingDagger + ConfigHandler.damageBaseParryingDagger));
+        return CorrosionHelper.getAttributeModifiers(super.getAttributeModifiers(slot, stack), slot, stack, ItemTool.ATTACK_DAMAGE_MODIFIER, Math.max(0.5F, this.toolMaterial.getAttackDamage() * ConfigHandler.damageMultiplierParryingDagger + ConfigHandler.damageBaseParryingDagger - 1f));
     }
 
     @SideOnly(Side.CLIENT)

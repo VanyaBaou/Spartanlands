@@ -1,7 +1,6 @@
 package com.vanyabaou.spartanlands.integration;
 
 import com.google.common.collect.Multimap;
-import com.oblivioussp.spartanweaponry.api.DamageHelper;
 import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
 import com.oblivioussp.spartanweaponry.item.*;
 import com.oblivioussp.spartanweaponry.util.ConfigHandler;
@@ -25,9 +24,6 @@ import thebetweenlands.common.item.BLMaterialRegistry;
 import javax.annotation.Nullable;
 import java.util.List;
 
-/**
- * Added by EnergizedBlast on 11/20/2021.
- */
 public class BLSWGlaive extends ItemGlaive implements ICorrodible, IAnimatorRepairable {
 
     protected final ToolMaterialEx toolMaterial;
@@ -62,7 +58,7 @@ public class BLSWGlaive extends ItemGlaive implements ICorrodible, IAnimatorRepa
 
     @Override
     public Multimap<String, AttributeModifier> getAttributeModifiers(EntityEquipmentSlot slot, ItemStack stack) {
-        return CorrosionHelper.getAttributeModifiers(super.getAttributeModifiers(slot, stack), slot, stack, ItemTool.ATTACK_DAMAGE_MODIFIER, Math.max(0.5F, this.toolMaterial.getAttackDamage() * ConfigHandler.damageMultiplierGlaive + ConfigHandler.damageBaseGlaive));
+        return CorrosionHelper.getAttributeModifiers(super.getAttributeModifiers(slot, stack), slot, stack, ItemTool.ATTACK_DAMAGE_MODIFIER, Math.max(0.5F, this.toolMaterial.getAttackDamage() * ConfigHandler.damageMultiplierGlaive + ConfigHandler.damageBaseGlaive - 1f));
     }
 
     @SideOnly(Side.CLIENT)

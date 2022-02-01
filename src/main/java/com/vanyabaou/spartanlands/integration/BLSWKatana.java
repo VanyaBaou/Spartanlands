@@ -1,7 +1,6 @@
 package com.vanyabaou.spartanlands.integration;
 
 import com.google.common.collect.Multimap;
-import com.oblivioussp.spartanweaponry.api.DamageHelper;
 import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
 import com.oblivioussp.spartanweaponry.item.ItemKatana;
 import com.oblivioussp.spartanweaponry.util.ConfigHandler;
@@ -11,9 +10,7 @@ import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.inventory.EntityEquipmentSlot;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemSword;
 import net.minecraft.item.ItemTool;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
@@ -27,9 +24,6 @@ import thebetweenlands.common.item.BLMaterialRegistry;
 import javax.annotation.Nullable;
 import java.util.List;
 
-/**
- * Created by Jacob on 8/11/2018.
- */
 public class BLSWKatana extends ItemKatana implements ICorrodible, IAnimatorRepairable {
 
     protected final ToolMaterialEx toolMaterial;
@@ -64,7 +58,7 @@ public class BLSWKatana extends ItemKatana implements ICorrodible, IAnimatorRepa
 
     @Override
     public Multimap<String, AttributeModifier> getAttributeModifiers(EntityEquipmentSlot slot, ItemStack stack) {
-        return CorrosionHelper.getAttributeModifiers(super.getAttributeModifiers(slot, stack), slot, stack, ItemTool.ATTACK_DAMAGE_MODIFIER, Math.max(0.5F, this.toolMaterial.getAttackDamage() * ConfigHandler.damageMultiplierKatana + ConfigHandler.damageBaseKatana));
+        return CorrosionHelper.getAttributeModifiers(super.getAttributeModifiers(slot, stack), slot, stack, ItemTool.ATTACK_DAMAGE_MODIFIER, Math.max(0.5F, this.toolMaterial.getAttackDamage() * ConfigHandler.damageMultiplierKatana + ConfigHandler.damageBaseKatana - 1f));
     }
 
     @SideOnly(Side.CLIENT)

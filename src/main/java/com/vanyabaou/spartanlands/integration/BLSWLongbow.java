@@ -1,9 +1,8 @@
 package com.vanyabaou.spartanlands.integration;
 
-import com.vanyabaou.spartanlands.Spartanlands;
-import com.vanyabaou.spartanlands.utils;
 import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
 import com.oblivioussp.spartanweaponry.item.ItemLongbow;
+import com.vanyabaou.spartanlands.Spartanlands;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -32,9 +31,6 @@ import thebetweenlands.common.registries.ItemRegistry;
 import javax.annotation.Nullable;
 import java.util.List;
 
-/**
- * Created by Jacob on 8/12/2018.
- */
 public class BLSWLongbow extends ItemLongbow implements ICorrodible, IAnimatorRepairable {
 
     public BLSWLongbow(String unlocName, ToolMaterialEx material) {

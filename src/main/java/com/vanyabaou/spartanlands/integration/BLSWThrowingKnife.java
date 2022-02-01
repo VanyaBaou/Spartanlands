@@ -1,7 +1,6 @@
 package com.vanyabaou.spartanlands.integration;
 
 import com.google.common.collect.Multimap;
-import com.oblivioussp.spartanweaponry.api.DamageHelper;
 import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
 import com.oblivioussp.spartanweaponry.item.ItemThrowingKnife;
 import com.oblivioussp.spartanweaponry.util.ConfigHandler;
@@ -25,9 +24,7 @@ import thebetweenlands.common.item.BLMaterialRegistry;
 import javax.annotation.Nullable;
 import java.util.List;
 
-/**
- * Created by Jacob on 8/12/2018.
- */
+
 public class BLSWThrowingKnife extends ItemThrowingKnife implements ICorrodible, IAnimatorRepairable {
 
     protected final ToolMaterialEx toolMaterial;
@@ -63,7 +60,7 @@ public class BLSWThrowingKnife extends ItemThrowingKnife implements ICorrodible,
     @Override
     public Multimap<String, AttributeModifier> getAttributeModifiers(EntityEquipmentSlot slot, ItemStack stack) {
         return CorrosionHelper.getAttributeModifiers(super.getAttributeModifiers(slot, stack), slot, stack, ItemTool.ATTACK_DAMAGE_MODIFIER,
-                Math.max(0.5F, this.toolMaterial.getAttackDamage() * ConfigHandler.damageMultiplierThrowingKnife + ConfigHandler.damageBaseThrowingKnife));
+                Math.max(0.5F, this.toolMaterial.getAttackDamage() * ConfigHandler.damageMultiplierThrowingKnife + ConfigHandler.damageBaseThrowingKnife - 1f));
     }
 
     @SideOnly(Side.CLIENT)

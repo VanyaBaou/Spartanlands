@@ -1,12 +1,10 @@
 package com.vanyabaou.spartanlands.integration;
 
-import com.oblivioussp.spartanweaponry.util.ConfigHandler;
-import com.vanyabaou.spartanlands.Spartanlands;
 import com.google.common.collect.Multimap;
-import com.oblivioussp.spartanweaponry.api.DamageHelper;
 import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
 import com.oblivioussp.spartanweaponry.item.ItemCaestus;
-import com.oblivioussp.spartanweaponry.item.ItemDagger;
+import com.oblivioussp.spartanweaponry.util.ConfigHandler;
+import com.vanyabaou.spartanlands.Spartanlands;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
@@ -20,16 +18,12 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import thebetweenlands.api.item.CorrosionHelper;
 import thebetweenlands.api.item.IAnimatorRepairable;
 import thebetweenlands.api.item.ICorrodible;
-import thebetweenlands.common.BetweenlandsAPI;
 import thebetweenlands.common.capability.circlegem.CircleGemHelper;
 import thebetweenlands.common.item.BLMaterialRegistry;
 
 import javax.annotation.Nullable;
 import java.util.List;
 
-/**
- * Added by EnergizedBlast on 11/20/2021.
- */
 public class BLSWCaestus extends ItemCaestus implements ICorrodible, IAnimatorRepairable {
 
     protected final ToolMaterialEx toolMaterial;
@@ -66,7 +60,7 @@ public class BLSWCaestus extends ItemCaestus implements ICorrodible, IAnimatorRe
 
     @Override
     public Multimap<String, AttributeModifier> getAttributeModifiers(EntityEquipmentSlot slot, ItemStack stack) {
-        return CorrosionHelper.getAttributeModifiers(super.getAttributeModifiers(slot, stack), slot, stack, ItemTool.ATTACK_DAMAGE_MODIFIER, Math.max(0.5F, this.toolMaterial.getAttackDamage() * ConfigHandler.damageMultiplierCaestus + ConfigHandler.damageBaseCaestus));
+        return CorrosionHelper.getAttributeModifiers(super.getAttributeModifiers(slot, stack), slot, stack, ItemTool.ATTACK_DAMAGE_MODIFIER, Math.max(0.5F, this.toolMaterial.getAttackDamage() * ConfigHandler.damageMultiplierCaestus + ConfigHandler.damageBaseCaestus - 1f));
     }
 
     @SideOnly(Side.CLIENT)

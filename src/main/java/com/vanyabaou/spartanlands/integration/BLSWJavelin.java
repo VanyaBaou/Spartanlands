@@ -1,7 +1,6 @@
 package com.vanyabaou.spartanlands.integration;
 
 import com.google.common.collect.Multimap;
-import com.oblivioussp.spartanweaponry.api.DamageHelper;
 import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
 import com.oblivioussp.spartanweaponry.item.ItemJavelin;
 import com.oblivioussp.spartanweaponry.util.ConfigHandler;
@@ -25,9 +24,6 @@ import thebetweenlands.common.item.BLMaterialRegistry;
 import javax.annotation.Nullable;
 import java.util.List;
 
-/**
- * Created by Jacob on 8/12/2018.
- */
 public class BLSWJavelin extends ItemJavelin implements ICorrodible, IAnimatorRepairable {
 
     protected final ToolMaterialEx toolMaterial;

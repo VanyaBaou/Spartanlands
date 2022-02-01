@@ -1,10 +1,8 @@
 package com.vanyabaou.spartanlands.integration;
 
 import com.google.common.collect.Multimap;
-import com.oblivioussp.spartanweaponry.api.DamageHelper;
 import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
 import com.oblivioussp.spartanweaponry.item.ItemMace;
-import com.oblivioussp.spartanweaponry.item.ItemWarhammer;
 import com.oblivioussp.spartanweaponry.util.ConfigHandler;
 import com.vanyabaou.spartanlands.Spartanlands;
 import net.minecraft.block.state.IBlockState;
@@ -26,9 +24,6 @@ import thebetweenlands.common.item.BLMaterialRegistry;
 import javax.annotation.Nullable;
 import java.util.List;
 
-/**
- * Added by EnergizedBlast on 11/20/2021.
- */
 public class BLSWMace extends ItemMace implements ICorrodible, IAnimatorRepairable {
 
     protected final ToolMaterialEx toolMaterial;
@@ -63,7 +58,7 @@ public class BLSWMace extends ItemMace implements ICorrodible, IAnimatorRepairab
 
     @Override
     public Multimap<String, AttributeModifier> getAttributeModifiers(EntityEquipmentSlot slot, ItemStack stack) {
-        return CorrosionHelper.getAttributeModifiers(super.getAttributeModifiers(slot, stack), slot, stack, ItemTool.ATTACK_DAMAGE_MODIFIER, Math.max(0.5F, this.toolMaterial.getAttackDamage() * ConfigHandler.damageMultiplierMace + ConfigHandler.damageBaseMace));
+        return CorrosionHelper.getAttributeModifiers(super.getAttributeModifiers(slot, stack), slot, stack, ItemTool.ATTACK_DAMAGE_MODIFIER, Math.max(0.5F, this.toolMaterial.getAttackDamage() * ConfigHandler.damageMultiplierMace + ConfigHandler.damageBaseMace - 1f));
     }
 
     @SideOnly(Side.CLIENT)
